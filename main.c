@@ -241,7 +241,7 @@ static uint8_t appvect_save[2];
 #define BOOT_MAGIC_VALUE 0xB007
 
 const static uint16_t pageInitializedValue = 0xFFFF;
-static uint16_t current_page = pageInitializedValue; //had been 0xFFFF
+static uint16_t current_page = 0xFFFF;
 static uint8_t page_dirty = 0;
 static uint8_t page_pos = 0;
 static uint16_t page_dirty_bytes = 0; // NEW: number of bytes buffered in current page
