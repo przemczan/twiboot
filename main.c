@@ -42,7 +42,15 @@
 #include <avr/eeprom.h>
 #include <stdlib.h>
 #include <util/twi.h>
- 
+
+/* Compatibility for ATmega328PB (uses TWCR0, TWAR0, etc. instead of TWCR, TWAR) */
+#if !defined(TWCR) && defined(TWCR0)
+#define TWCR    TWCR0
+#define TWAR    TWAR0
+#define TWSR    TWSR0
+#define TWDR    TWDR0
+#endif
+
 #define LED_PIN PB5
 
 //use 7000 for atmega328p, f000 for atmega644p
